@@ -37,6 +37,11 @@ clean:
 
 re: fclean all
 
+p: 
+	make && make clean && make run
+run: 
+	exec ./bin/so_long
+
 pull: 
 	git submodule update --recursive --remote
 	@printf "\n$(COLOR)$(KAOMOJI_SUCCESS) Pull submodule success!$(COLOR_RESET)"
@@ -50,4 +55,4 @@ git: fclean
 	git commit -am "$$MSG"
 	git push
 
-.PHONY: clean all fclean re git pull
+.PHONY: clean all fclean re git pull run
