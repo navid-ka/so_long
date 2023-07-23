@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 23:21:56 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/21 20:18:53 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/23 16:57:57 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@ typedef struct	s_data {
 	int		endian;
 }				t_data;
 
+#define WIDTH 1920
+#define HEIGHT 1080
+
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
 	char	*dst;
@@ -28,14 +31,14 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
 	*(unsigned int*)dst = color;
 }
-#define WIDTH 1920
-#define HEIGHT 1080
 
 int	main(void)
 {
 	void	*mlx;
 	void	*mlx_win;
 	t_data	img;
+	int height[] = {32};
+	int width[] = {32};
 
 	mlx = mlx_init();
 	mlx_win = mlx_new_window(mlx, WIDTH, HEIGHT, "Hello world!");
@@ -51,6 +54,8 @@ int	main(void)
 	for (size_t l = 200; l < HEIGHT/2; l++)
 		my_mlx_pixel_put(&img, l + HEIGHT/2, HEIGHT/2, 0x00FF0000);
 	mlx_string_put(mlx, mlx_win, WIDTH/2, HEIGHT/2, 0x00FF0000, "SO LONG");
+	void *player = mlx_xpm_file_to_image(mlx, "assets/player.xpm", width, height);
 	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
+	mlx_put_image_to_window (mlx, mlx_win, player, HEIGHT/2 + 300, WIDTH/4);
 	mlx_loop(mlx);
 }
