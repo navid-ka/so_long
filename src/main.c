@@ -6,23 +6,20 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 23:21:56 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/23 16:57:57 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/24 15:34:44 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
+#include <stdio.h>
 
-
-typedef struct	s_data {
+/*typedef struct	s_data {
 	void	*img;
 	char	*addr;
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
 }				t_data;
-
-#define WIDTH 1920
-#define HEIGHT 1080
 
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
@@ -31,31 +28,30 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
 	*(unsigned int*)dst = color;
 }
-
+*/
 int	main(void)
 {
-	void	*mlx;
-	void	*mlx_win;
-	t_data	img;
-	int height[] = {32};
-	int width[] = {32};
-
-	mlx = mlx_init();
-	mlx_win = mlx_new_window(mlx, WIDTH, HEIGHT, "Hello world!");
-	img.img = mlx_new_image(mlx, WIDTH, HEIGHT);
-	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length,
-								&img.endian);
-	for (size_t i = 0; i < 100; i++)
-		my_mlx_pixel_put(&img, i, 100, 0x0000FF00);
-	for (size_t j = 0; j < 100; j++)
-		my_mlx_pixel_put(&img, j + 1, j, 0x00FF0000);
-	for (size_t k = 200; k < WIDTH/2; k++)
-		my_mlx_pixel_put(&img, WIDTH/2, k, 0x00FF0000);
-	for (size_t l = 200; l < HEIGHT/2; l++)
-		my_mlx_pixel_put(&img, l + HEIGHT/2, HEIGHT/2, 0x00FF0000);
-	mlx_string_put(mlx, mlx_win, WIDTH/2, HEIGHT/2, 0x00FF0000, "SO LONG");
-	void *player = mlx_xpm_file_to_image(mlx, "assets/player.xpm", width, height);
-	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
-	mlx_put_image_to_window (mlx, mlx_win, player, HEIGHT/2 + 300, WIDTH/4);
-	mlx_loop(mlx);
+	t_game	*g;
+	
+	printf("LOADING\n");
+	g = malloc(sizeof (t_game));
+	g->h = 32;
+	g->w = 32;
+	g->w_win = WIN_WIDTH;
+	g->h_win = WIN_HEIGHT;
+	g->mlx = mlx_init();
+	printf("Game init in:			%p\n", g->mlx);
+	g->mlx_win = mlx_new_window(g->mlx, WIN_WIDTH, WIN_HEIGHT, TITLE);
+	g->player = mlx_xpm_file_to_image(g->mlx, "assets/player.xpm", &g->w, &g->h);
+	printf("Player loaded in:		%p\n", g->player);
+	g->bg = mlx_xpm_file_to_image(g->mlx, "assets/bg.xpm", &g->w_win, &g->h_win);
+	printf("Map loaded in:			%p\n", g->bg);
+	mlx_put_image_to_window(g->mlx, g->mlx_win, g->bg , 0, 0);
+	mlx_put_image_to_window (g->mlx, g->mlx_win, g->player, WIN_WIDTH/2, WIN_HEIGHT/2);
+	mlx_string_put(g->mlx, g->mlx_win, WIN_WIDTH/2 - 10, WIN_HEIGHT/2 + 35, 0x00FFFFFFF, "Player");
+	int i = 0; 
+	i += mlx_loop(g->mlx);
+	printf("Steps in mlx:			%d\n", i);
+	free(g);
+	return (0);
 }

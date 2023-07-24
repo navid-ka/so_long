@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 23:22:31 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/21 14:02:38 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/24 10:48:26 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,8 @@
 # include <libft.h>
 # include <mlx.h>
 # include <stdint.h>
-
-typedef struct s_map
-{
-	uint16_t	x;
-	uint16_t	y;
-}	t_map;
-
-typedef struct s_entity
-{
-	uint16_t	x;
-	uint16_t	y;
-	//struct		*s_map;
-}	t_entity;
-
-
-typedef struct s_player
-{
-	uint16_t	x;
-	uint16_t	y;
-	//struct		*s_map;
-}	t_player;
+# include "defines.h"
+# include "struct.h"
 
 // mlx main loop
 void	solong_mlx_init();
