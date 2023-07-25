@@ -7,15 +7,24 @@
 
 #include "mlx_int.h"
 #include "mlx_new_window.h"
+#include <stdio.h>
 
 #include "font.c"
 
+
+void	mlx_destroy(void *mlx_ptr)
+{
+	mlx_ptr_t	*ptr;
+
+	ptr = mlx_ptr;
+	mlx_destroy_image(ptr, ptr->font);
+	free(ptr);
+}
 
 void	do_loop_hook2(CFRunLoopTimerRef observer, void * info)
 {
   ((mlx_ptr_t *)info)->loop_hook(((mlx_ptr_t *)info)->loop_hook_data);
 }
-
 
 void do_loop_flush(CFRunLoopObserverRef observer, CFRunLoopActivity activity, void * info)
 {
@@ -55,7 +64,7 @@ void *mlx_init()
   new_mlx->main_loop_active = 0;
 
   new_mlx->appid = [NSApplication sharedApplication];
-
+  NSLog(@"MLX INIT!");
   // super magic trick to detach app from terminal, get menubar & key input events
   for (NSRunningApplication * app in [NSRunningApplication runningApplicationsWithBundleIdentifier:@"com.apple.finder"])
     {
@@ -180,7 +189,7 @@ int mlx_loop_hook(mlx_ptr_t *mlx_ptr, void (*fct)(void *), void *param)
 
   mlx_ptr->loop_hook = fct;
   mlx_ptr->loop_hook_data = param;
-
+  
   if (fct)
     {
       timer = CFRunLoopTimerCreate(kCFAllocatorDefault, 0.0, 0.0001, 0, 0, &do_loop_hook2, &tcontext);
