@@ -48,6 +48,7 @@ pull:
 	git pull
 
 git: fclean
+	git submodule update --init
 	git submodule update --recursive --remote
 	@echo "Pulled recursive"
 	@echo "Commit:"
