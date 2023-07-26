@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 23:21:56 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/25 18:17:42 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/26 15:04:32 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,18 @@
 
 int	solong_game_destroy(t_game *g)
 {
-	mlx_destroy_window(g->mlx, g->mlx_win);
+	//mlx_destroy_window(g->mlx, g->mlx_win);
 	free(g);
-	exit(EXIT_SUCCESS);
+	exit(0);
 }
 
-int	solong_game_read_keys(t_game *g, int key_pressed)
+int	solong_game_read_keys(int key_pressed, t_game *g)
 {
 	if (key_pressed == ESC)
+	{
+		printf("KEY PRESSED:		%d\n", ESC);
 		solong_game_destroy(g);
-	printf("KEY PRESSED:		%d\n", key_pressed);
+	}
 	write(1, "\n", 1);
 	return (0);
 }
@@ -51,10 +53,12 @@ int	main(void)
 	g->bg = mlx_xpm_file_to_image(g->mlx, bg.asset, &g->w_win, &g->h_win);
 	printf("Map loaded in:			%p\n", g->bg);
 	mlx_put_image_to_window(g->mlx, g->mlx_win, g->bg , 0, 0);
-	mlx_put_image_to_window(g->mlx, g->mlx_win, g->player, WIN_WIDTH/2, WIN_HEIGHT/2);
-	mlx_string_put(g->mlx, g->mlx_win, WIN_WIDTH/2 - 10, WIN_HEIGHT/2 + 35, 0xAACCFF, "Player");
-	mlx_hook(g->mlx_win, 17, 0, solong_game_destroy, g);
+	mlx_put_image_to_window(g->mlx, g->mlx_win, g->player, \
+			WIN_WIDTH/2, WIN_HEIGHT/2);
+	mlx_string_put(g->mlx, g->mlx_win, WIN_WIDTH/2 - 10, \
+				WIN_HEIGHT/2 + 35, 0x00AACCFF, "Player");
 	mlx_key_hook(g->mlx_win, solong_game_read_keys, g);
+	mlx_hook(g->mlx_win, 17, 0, solong_game_destroy, g);
 	mlx_loop(g->mlx);
 	mlx_destroy(g->mlx);
 	free(g);

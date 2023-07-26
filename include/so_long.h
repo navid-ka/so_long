@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 23:22:31 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/24 10:48:26 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/26 13:15:44 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <libft.h>
 # include <mlx.h>
 # include <stdint.h>
+# include <fcntl.h>
 # include "defines.h"
 # include "struct.h"
 

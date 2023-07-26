@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 10:32:23 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/07/25 14:15:36 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/26 14:29:52 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ typedef struct s_game
 	void		*mlx_win;
 	char		*img;
 	void		*player;
-	void		**map;
+	char		**map;
 	void		*bg;
 	char		*asset;
 	int			h;
