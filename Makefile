@@ -43,13 +43,13 @@ run:
 	exec ./bin/so_long
 
 pull: 
-	git submodule update --recursive --remote
-	@printf "\n$(COLOR)$(KAOMOJI_SUCCESS) Pull submodule success!$(COLOR_RESET)"
-	git pull
+	@git submodule update --init
+	@git submodule update --recursive --remote
+	@printf "$(COLOR)$(KAOMOJI_SUCCESS) Pull submodule success!$(COLOR_RESET)\n"
+	@git pull
+	@printf "$(COLOR)$(KAOMOJI_SUCCESS) Pull success!$(COLOR_RESET)\n"
 
 git: fclean
-	git submodule update --init
-	git submodule update --recursive --remote
 	@echo "Pulled recursive"
 	@echo "Commit:"
 	@read MSG; \
