@@ -3,6 +3,7 @@ CFLAGS = -Wall -Werror -Wextra -g
 SRCDIR = src
 OBJDIR = obj
 BINDIR = bin
+HEADERS = include/so_long.h include/struct.h include/defines.h
 SRC = src/main.c 
 OBJECTS = $(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(SRC))
 COLOR_RESET = $(shell tput sgr0)
@@ -16,7 +17,7 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	@mkdir -p $(@D)
 	@gcc $(CFLAGS) -c $< -o $@ -Iinclude/libft/include -Iinclude/mlx
 
-${NAME}: ${OBJECTS} Makefile include/so_long.h
+${NAME}: ${OBJECTS} Makefile ${HEADERS}
 	@mkdir -p $(@D)
 	@$(MAKE) -C include/libft
 	@$(MAKE) -C include/mlx
