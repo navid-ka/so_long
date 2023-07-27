@@ -11,16 +11,18 @@ COLOR = $(shell tput setaf 2)
 KAOMOJI_SUCCESS = (づ ᴗ _ᴗ)づ♡
 KAOMOJI_REMOVE = (ノಠ益ಠ)ノ彡┻━┻
 
+#Only for MLX proyects
+OLD_MAKE = /usr/bin/make3.81 
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	@printf "$(COLOR)\rCompiling (╮°-°)╮┳━┳ : $(COLOR_RESET)$<"
 	@mkdir -p $(@D)
 	@gcc $(CFLAGS) -c $< -o $@ -Iinclude/libft/include -Iinclude/mlx
 
-${NAME}: ${OBJECTS} Makefile ${HEADERS}
+${NAME}: ${OBJECTS} ${HEADERS} Makefile
 	@mkdir -p $(@D)
-	@$(MAKE) -C include/libft
-	@$(MAKE) -C include/mlx
+	@$(OLD_MAKE) -C include/libft
+	@$(OLD_MAKE) -C include/mlx
 	@gcc $(CFLAGS) -o ${NAME} ${OBJECTS} -Iinclude/libft/include -Linclude/libft/bin -lft \
 	-Iinclude/mlx -Linclude/mlx -lmlx -framework OpenGL -framework AppKit
 	@printf "\n$(COLOR)$(KAOMOJI_SUCCESS) Successfully compiled!$(COLOR_RESET)"
