@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 23:22:31 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/27 11:14:35 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/27 13:17:02 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,22 @@
 # include "struct.h"
 
 // mlx main loop
-void	solong_mlx_init();
+void	sl_mlx_init();
 
 //map
-void	solong_map_load();
-void	solong_map_create();
-int		solong_map_destroy(void *ptr);
+void	sl_map_load();
+void	sl_map_create();
+int		sl_destroy(void *ptr);
 
 
 //player
-void	solong_player_load();	
-void	solong_player_create();	
+void	sl_player_load();	
+void	sl_player_create();	
 void	solong_player_destroy();
 
 //entity 
-void	solong_entity_load();	
-void	solong_entity_create();	
-void	solong_entity_destroy();
+void	sl_entity_load();	
+void	sl_entity_create();	
+void	sl_entity_destroy();
 
 #endif
