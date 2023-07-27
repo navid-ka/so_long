@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 23:21:56 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/26 15:04:32 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/27 11:22:35 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	main(void)
 	mlx_put_image_to_window(g->mlx, g->mlx_win, g->player, \
 			WIN_WIDTH/2, WIN_HEIGHT/2);
 	mlx_string_put(g->mlx, g->mlx_win, WIN_WIDTH/2 - 10, \
-				WIN_HEIGHT/2 + 35, 0x00AACCFF, "Player");
+				WIN_HEIGHT/2 + 50, 0x00AACCFF, "Player");
 	mlx_key_hook(g->mlx_win, solong_game_read_keys, g);
 	mlx_hook(g->mlx_win, 17, 0, solong_game_destroy, g);
 	mlx_loop(g->mlx);
