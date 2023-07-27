@@ -1,5 +1,5 @@
 NAME = $(BINDIR)/so_long
-CFLAGS = -Wall -Werror -Wextra -g 
+CFLAGS = -Wall -Werror -Wextra -g
 SRCDIR = src
 OBJDIR = obj
 BINDIR = bin
@@ -16,7 +16,7 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	@mkdir -p $(@D)
 	@gcc $(CFLAGS) -c $< -o $@ -Iinclude/libft/include -Iinclude/mlx
 
-${NAME}: ${OBJECTS}
+${NAME}: ${OBJECTS} Makefile include/so_long.h
 	@mkdir -p $(@D)
 	@$(MAKE) -C include/libft
 	@$(MAKE) -C include/mlx
