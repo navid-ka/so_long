@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 13:09:43 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/07/27 12:15:57 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/27 12:56:57 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	solong_map_read(char **argv, t_game *g)
 	i = 0;
 	line = get_next_line(argv[1]);
 	while (line)
-		g->map = ft_strjoin(g->map, map_line);
+		g->map = ft_strjoin(g->map, line);
 	free(line);
 }
 
@@ -39,5 +39,6 @@ t_game	*solong_map_init(char **argv, t_game *g)
 	
 	fd = open(argv[1], O_RDONLY);
 	solong_map_read(argv[1]);
+	g->map = ft_split(g->map, '\n');
 	return (g->map);
 }
