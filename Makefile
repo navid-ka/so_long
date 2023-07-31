@@ -1,5 +1,5 @@
 NAME = $(BINDIR)/so_long
-CFLAGS = -Wall -Werror -Wextra -g
+CFLAGS = -Wall -Werror -Wextra -g -fsanitize=address
 SRCDIR = src
 OBJDIR = obj
 BINDIR = bin

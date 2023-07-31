@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 23:21:56 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/31 12:47:57 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/31 14:54:16 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	main(int argc, char **argv)
 	g->mlx = mlx_init();
 	g->win = mlx_new_window(g->mlx, W_W, W_H, TITLE);
 	sl_game_start(g);
-	sl_map_init(argv);
+	sl_map_init(argv, g);
 	mlx_loop(g->mlx);
 	mlx_destroy(g->mlx);
 	free(g);
