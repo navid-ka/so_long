@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 23:21:56 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/27 16:02:50 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/07/31 12:47:57 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,15 +55,17 @@ void	sl_game_start(t_game *g)
 	mlx_hook(g->win, 17, 0, sl_game_destroy, g);
 }
 
-int	main(void)
+int	main(int argc, char **argv)
 {
 	t_game	*g;
 
+	(void)argc;
 	printf("LOADING\n");
 	g = malloc(sizeof (t_game));
 	g->mlx = mlx_init();
 	g->win = mlx_new_window(g->mlx, W_W, W_H, TITLE);
 	sl_game_start(g);
+	sl_map_init(argv);
 	mlx_loop(g->mlx);
 	mlx_destroy(g->mlx);
 	free(g);
