@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:15:05 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/01 19:34:03 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/01 21:03:08 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	sl_map_parse_rect(t_game *g)
 {
 	g->x = 0;
 	g->y = 0;
-	while (g->map[g->y])
+	while (g->map[0][g->x] == '1')
 	{
 		while (g->map[g->y][g->x])
 			g->x++;
