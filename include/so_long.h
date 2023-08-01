@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 23:22:31 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/31 14:54:26 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/01 18:21:30 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@ void	sl_map_create();
 int		sl_destroy(void *ptr);
 void	sl_map_init(char **argv, t_game *g);
 
+//map parse
 
+int		sl_map_parse_rect(t_game *g);
 //player
 void	sl_player_load();	
 void	sl_player_create();	

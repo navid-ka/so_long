@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 13:09:43 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/01 15:23:27 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/01 19:07:57 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,23 +38,14 @@ void	sl_map_read(int fd, t_game *g)
 
 void	sl_map_parser(t_game *g)
 {
-	
-	t_game *c;
-	
-	c = g;
-	for (size_t i = 0; c->map[i]; i++) { 
-        ft_printf("%s\n", c->map[i]);
-    }
-		ft_printf("%p\n", c);
-		ft_printf("%p\n", g);
+	if (sl_map_parse_rect(g) == 0)
+		ft_printf("Error map is square");
+	/*else if (!sl_map_parse_char(g))
+	else if (!sl_map_parse_walls(g))
+	else if (!sl_map_parse_path(g))*/
 }
 
-/*void	sl_map_create(int fd, t_game *g)
-{
-	
-}
-
-void	sl_map_destroy(int fd)
+/*void	sl_map_draw(t_game *g)
 {
 	
 }
@@ -67,6 +58,7 @@ void	sl_map_init(char **argv, t_game *g)
 	ft_printf("fd open %d\n", fd);
 	sl_map_read(fd, g);
 	sl_map_parser(g);
+	//sl_map_draw(g);
 	close(fd);
 	//g->map = ft_split(g->map, '\n');
 }
