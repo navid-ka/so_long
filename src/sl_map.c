@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 13:09:43 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/02 16:27:39 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/02 19:39:27 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,11 @@ void	sl_map_parser(t_game *g)
 {
 	if (sl_map_parse_rect(g) == 0)
 		ft_printf("Error map not rect\n");
-	if (sl_map_parse_walls(g) == 0)
+	else if (sl_map_parse_walls(g) == 0)
 		ft_printf("Error map no walls\n");
-	/*else if (!sl_map_parse_char(g))
-	else if (!sl_map_parse_walls(g))
+	else if (!sl_map_parse_char(g))
+		ft_printf("Error not correct chars\n");
+	/*else if (!sl_map_parse_walls(g))
 	else if (!sl_map_parse_path(g))*/
 }
 
