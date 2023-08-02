@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 23:21:56 by bifrost           #+#    #+#             */
-/*   Updated: 2023/07/31 14:54:16 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/02 12:25:30 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,26 @@ int	sl_game_destroy(t_game *g)
 	free(g);
 	exit(0);
 }
+
+/*void	sl_game_struct_init(t_game *g)
+{
+	g->mlx = mlx_init();
+	g->win = mlx_new_window(g->mlx, W_W, W_H, TITLE);
+	g->img;
+	g->p;
+	g->map;
+	g->bg;
+	g->asset;
+	g->h;
+	g->w;
+	g->e;
+	g->c;
+	g->pl;
+	g->h_w;
+	g->w_w;
+	g->col;
+	g->row;
+}*/
 
 int	sl_game_read_keys(int key_pressed, t_game *g)
 {
@@ -62,12 +82,14 @@ int	main(int argc, char **argv)
 	(void)argc;
 	printf("LOADING\n");
 	g = malloc(sizeof (t_game));
-	g->mlx = mlx_init();
-	g->win = mlx_new_window(g->mlx, W_W, W_H, TITLE);
-	sl_game_start(g);
+
+	//sl_game_start(g);
 	sl_map_init(argv, g);
-	mlx_loop(g->mlx);
-	mlx_destroy(g->mlx);
+	//g->win = ;
+	//sl_game_start(g);
+	//sl_map_init(argv, g);
+	//mlx_loop(g->mlx);
+	//mlx_destroy(g->mlx);
 	free(g);
 	return (0);
 }
