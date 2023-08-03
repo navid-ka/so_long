@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 10:22:51 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/03 17:50:37 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/03 19:28:01 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,24 +38,21 @@ static int	sl_map_parse_chars(t_game *g, char a)
 	return (1);
 }
 
-static int	sl_map_parse_incorrect_chars(t_game *g)
+int sl_map_parse_incorrect_chars(t_game *g)
 {
-	int		i;
-	int		j;
-	char	*valid_chars;
+	int	i;
+	int j;
+	char *valid_chars;
 
-	j = 0;
 	i = 0;
 	valid_chars = "10CEP";
 	while (g->map[i])
 	{
+		j = 0;
 		while (g->map[i][j])
 		{
-			if (ft_strcmp(line, g->map[i]))
-			{
-				ft_printf("Map does not contain 10PCE");
+			if (ft_strchr(valid_chars, g->map[i][j]) == NULL)
 				return (0);
-			}
 			j++;
 		}
 		i++;
@@ -68,9 +65,6 @@ int	sl_map_parse_char(t_game *g)
 	int	i;
 
 	i = 0;
-	i = sl_map_parse_incorrect_chars(g);
-	if (i == 0)
-		return (0);
 	i = sl_map_parse_chars(g, 'C');
 	if (i == 0)
 		return (0);

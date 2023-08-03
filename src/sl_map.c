@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 13:09:43 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/03 16:24:08 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/03 19:32:41 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,9 @@ void	sl_map_parser(t_game *g)
 	else if (sl_map_parse_walls(g) > 0)
 		ft_printf("Error map no walls\n");
 	else if (sl_map_parse_char(g) == 0)
-		ft_printf("Error not correct chars\n");
+		ft_printf("Error not correct chars: more or less valid chars\n");
+	else if (sl_map_parse_incorrect_chars(g) == 0)
+		ft_printf("Error invalid chars\n");
 	/*else if (!sl_map_parse_path(g))*/
 }
 
