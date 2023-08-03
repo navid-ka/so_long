@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:15:05 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/02 17:54:38 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/03 12:23:56 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static int	sl_map_parse_walls_rows(t_game *g)
 	while (g->map[0][i] == '1' )
 	{
 		if (g->map[0][i] != '1')
-			return (0);
+			return (1);
 		i++;
 	}
 	i = 0;
@@ -59,10 +59,10 @@ static int	sl_map_parse_walls_rows(t_game *g)
 	while (g->map[g->row - 1][i])
 	{
 		if (g->map[g->row - 1][i] != '1')
-			return (0);
+			return (1);
 		i++;
 	}
-	return (1);
+	return (0);
 }
 
 static int	sl_map_parse_walls_cols(t_game *g)
@@ -75,7 +75,7 @@ static int	sl_map_parse_walls_cols(t_game *g)
 	while (g->map[i])
 	{
 		if (g->map[i][0] != '1' && g->map[i][g->col - 1] != '1')
-			return (0);
+			return (1);
 		i++;
 	}
 	/*contar 1 en ultima columna*/
@@ -83,10 +83,10 @@ static int	sl_map_parse_walls_cols(t_game *g)
 	while (g->map[i])
 	{
 		if (g->map[i][g->col - 1] != '1')
-			return (0);
+			return (1);
 		i++;
 	}
-	return (1);
+	return (0);
 }
 
 int	sl_map_parse_walls(t_game *g)
@@ -94,9 +94,7 @@ int	sl_map_parse_walls(t_game *g)
 	int	i;
 
 	i = 0;
-	i = sl_map_parse_walls_rows(g);
-	ft_printf("%d", i);
-	i = sl_map_parse_walls_cols(g);
-	ft_printf("%d", i);
+	i += sl_map_parse_walls_rows(g);
+	i += sl_map_parse_walls_cols(g);
 	return (i);
 }
