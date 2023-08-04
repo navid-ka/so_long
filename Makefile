@@ -4,7 +4,8 @@ SRCDIR = src
 OBJDIR = obj
 BINDIR = bin
 HEADERS = include/so_long.h include/struct.h include/defines.h
-SRC = src/main.c src/sl_map.c src/sl_map_parse_rect.c src/sl_map_parse_char.c
+SRC = 	src/main.c src/sl_map.c src/sl_map_parse_rect.c src/sl_map_parse_char.c \
+		src/sl_map_parse_backtracking.c
 OBJECTS = $(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(SRC))
 COLOR_RESET = $(shell tput sgr0)
 COLOR = $(shell tput setaf 2)

@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 10:22:51 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/03 19:28:01 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/04 14:59:55 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	sl_map_parse_chars(t_game *g, char a)
 		if (flag == 0 || flag > 1)
 			return (0);
 	}
-	else if (a == '0' || a == 'C')
+	else if (a == 'C')
 	{
 		if (flag == 0)
 			return (0);
@@ -69,9 +69,6 @@ int	sl_map_parse_char(t_game *g)
 	if (i == 0)
 		return (0);
 	i = sl_map_parse_chars(g, 'P');
-	if (i == 0)
-		return (0);
-	i = sl_map_parse_chars(g, '0');
 	if (i == 0)
 		return (0);
 	i = sl_map_parse_chars(g, 'E');
