@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 13:09:43 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/04 17:41:08 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/04 18:27:07 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,23 +41,24 @@ void	sl_map_read(int fd, t_game *g)
 		exit(1);
 		}
 	g->map = ft_split(all_lines, '\n');
-	for (size_t i = 0; g->map[i]; i++){
-        ft_printf("%s\n", g->map[i]);
+	g->mapcpy = ft_split(all_lines, '\n');
+	for (size_t i = 0; g->mapcpy[i]; i++){
+        ft_printf("%s\n", g->mapcpy[i]);
     }
 	free(all_lines);
 }
-
-char	**sl_map_cpy(t_game *g)
+/*
+void	sl_map_cpy(t_game *g)
 {
 	char **mapcpy;
 
-	mapcpy = malloc((sizeof(g) + 1)  * sizeof(char *));
-	ft_memcpy(mapcpy, g->map, (sizeof(g) + 1) * sizeof(char *));
-	/*for (size_t i = 0; mapcpy[i]; i++){
+	mapcpy = malloc((sizeof(g)) * sizeof(char *));
+	ft_memcpy(mapcpy, g->map, (sizeof(g)) * sizeof(char *));
+	//mapcpy[ft_strlen(*mapcpy) + 1] = NULL;
+	for (size_t i = 0; mapcpy[i]; i++){
         ft_printf("cpy\t%s\n", mapcpy[i]);
-    }*/
-	return (mapcpy);
-}
+    }
+}*/
 
 void	sl_map_parser(t_game *g)
 {
@@ -89,7 +90,8 @@ void	sl_map_init(char **argv, t_game *g)
 	ft_printf("fd open %d\n", fd);
 	sl_map_read(fd, g);
 	sl_map_parser(g);
-	sl_map_parse_backtracking(g);
+	//sl_map_cpy(g);
+	//sl_map_parse_backtracking(g);
 	//sl_map_draw(g);
 	close(fd);
 }

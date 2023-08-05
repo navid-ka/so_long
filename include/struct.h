@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 10:32:23 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/02 11:48:32 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/04 18:26:27 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ typedef struct s_game
 	char		*img;
 	void		*p;
 	char		**map;
+	char		**mapcpy;
 	void		*bg;
 	char		*asset;
 	int			h;
