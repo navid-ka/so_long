@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 17:02:37 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/05 19:30:31 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/05 19:37:27 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,9 @@ static void	sl_bt_starting(t_game *g)
 	}
 }
 
-
-void	sl_map_parse_backtracking(t_game *g)
+/*
+void	sl_map_backtracking(t_game *g)
 {
 	
 }
+*/

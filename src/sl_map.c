@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 13:09:43 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/05 19:08:32 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/05 19:35:59 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	sl_map_init(char **argv, t_game *g)
 	ft_printf("fd open %d\n", fd);
 	sl_map_read(fd, g);
 	sl_map_parser(g);
-	sl_map_parse_backtracking(g);
+	sl_map_backtracking(g);
 	//sl_map_draw(g);
 	close(fd);
 }
