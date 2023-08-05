@@ -6,23 +6,40 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 17:02:37 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/04 18:24:04 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/05 17:11:20 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-void	sl_map_parse_backtracking(t_game *g)
+static bool	sl_backtracking_is_valid(t_game *g)
 {
-	(void)g;
-	/*char **mapcpy;
-	int i;
+	
+}
+
+static void	sl_backtracking_starting(t_game *g)
+{
+	int	i;
+	int	j;
 
 	i = 0;
-	mapcpy = sl_map_cpy(g);*/
-	/*for (int i = 0; mapcpy[i] != NULL; i++){
-        ft_printf("cpy\t%s\n", mapcpy[i]);
-    }*/
-	/*while (mapcpy[i] != NULL)
-		ft_printf("cpy\t%s\n", mapcpy[i++]);*/
+	j = 0;
+	while (g->mapcpy[i])
+	{
+		while (g->mapcpy[i][j])
+		{
+			if (g->map[i][j] == 'P')
+			{
+				g->p_start_x = i;
+				g->p_start_y = j;
+			}
+			j++;
+		}
+		i++;
+	}
+}
+
+void	sl_map_parse_backtracking(t_game *g)
+{
+	
 }

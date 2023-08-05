@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 13:09:43 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/04 18:27:07 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/05 16:59:54 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,18 +47,6 @@ void	sl_map_read(int fd, t_game *g)
     }
 	free(all_lines);
 }
-/*
-void	sl_map_cpy(t_game *g)
-{
-	char **mapcpy;
-
-	mapcpy = malloc((sizeof(g)) * sizeof(char *));
-	ft_memcpy(mapcpy, g->map, (sizeof(g)) * sizeof(char *));
-	//mapcpy[ft_strlen(*mapcpy) + 1] = NULL;
-	for (size_t i = 0; mapcpy[i]; i++){
-        ft_printf("cpy\t%s\n", mapcpy[i]);
-    }
-}*/
 
 void	sl_map_parser(t_game *g)
 {
@@ -90,7 +78,6 @@ void	sl_map_init(char **argv, t_game *g)
 	ft_printf("fd open %d\n", fd);
 	sl_map_read(fd, g);
 	sl_map_parser(g);
-	//sl_map_cpy(g);
 	//sl_map_parse_backtracking(g);
 	//sl_map_draw(g);
 	close(fd);

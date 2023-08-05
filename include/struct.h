@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 10:32:23 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/04 18:26:27 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/05 17:10:55 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ typedef struct s_game
 	int			pl;
 	int			h_w;
 	int			w_w;
+	int			p_start_y;
+	int			p_start_x;
 	int			col;
 	int			row;
 }	t_game;
