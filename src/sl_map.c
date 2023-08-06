@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 13:09:43 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/06 12:19:36 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/06 18:48:09 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	sl_map_parser(t_game *g)
 		ft_printf("Error not correct chars: more or less valid chars\n");
 	else if (sl_map_parse_incorrect_chars(g) == 0)
 		ft_printf("Error invalid chars\n");
-	/*else if (!sl_map_parse_path(g))*/
+	sl_map_backtracking(g);
 }
 
 /*void	sl_map_draw(t_game *g)

@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 10:22:51 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/04 14:59:55 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/06 16:52:31 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ static int	sl_map_parse_chars(t_game *g, char a)
 
 int sl_map_parse_incorrect_chars(t_game *g)
 {
-	int	i;
-	int j;
-	char *valid_chars;
+	int		i;
+	int		j;
+	char	*valid_chars;
 
 	i = 0;
 	valid_chars = "10CEP";
