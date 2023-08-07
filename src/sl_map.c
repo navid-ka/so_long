@@ -75,10 +75,9 @@ void	sl_map_init(char **argv, t_game *g)
 	fd = open(str, O_RDONLY);
 	if (!fd)
 		exit(1);
-	ft_printf("fd open %d\n", fd);
+	ft_printf("INFO: FILE SUCCESFULLY OPEN IN FD %d\n", fd);
 	sl_map_read(fd, g);
 	sl_map_parser(g);
-	//sl_map_backtracking(g);
-	//sl_map_draw(g);
+	ft_printf("INFO: Map parsed correctly\n");
 	close(fd);
 }

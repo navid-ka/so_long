@@ -50,7 +50,7 @@ static void sl_bt_starting(t_game *g)
 	}
 }
 
-static void flood_fill(t_game *g, int i, int j)
+static void sl_bt(t_game *g, int i, int j)
 {
 	while (g->mapcpy[i][j] != '1' && g->mapcpy[i][j] != 'X')
 	{
@@ -59,10 +59,10 @@ static void flood_fill(t_game *g, int i, int j)
 		else if (g->mapcpy[i][j] == 'E')
 			g->e--;
 		g->mapcpy[i][j] = 'X';
-		flood_fill(g, i + 1, j);
-		flood_fill(g, i - 1, j);
-		flood_fill(g, i, j + 1);
-		flood_fill(g, i, j - 1);
+		sl_bt(g, i + 1, j);
+		sl_bt(g, i - 1, j);
+		sl_bt(g, i, j + 1);
+		sl_bt(g, i, j - 1);
 	}
 }
 
@@ -70,15 +70,12 @@ void sl_map_backtracking(t_game *g)
 {
 	sl_map_count_rows_cols(g);
 	sl_bt_starting(g);
-	ft_printf("(%d,%d)\n", g->p_row, g->p_col);
-	flood_fill(g, g->p_row, g->p_col);
+	ft_printf("INFO: Player position	(%d,%d)\n", g->p_row, g->p_col);
+	sl_bt(g, g->p_row, g->p_col);
 
-	/*if (g->c != 0)
-		ft_printf("Map does not have a valid path.\n");
 	for (size_t i = 0; g->mapcpy[i]; i++){
 		ft_printf("%s\n", g->mapcpy[i]);
-	}*/
-
+	}
 	if (g->c != 0)
 		ft_printf("Map does not have a valid path.\n");
 	if (g->e != 0)
