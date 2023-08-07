@@ -1,5 +1,5 @@
 NAME = $(BINDIR)/so_long
-CFLAGS = -Wall -Werror -Wextra -g -fsanitize=address
+CFLAGS = -Wall -Werror -Wextra #-g -fsanitize=address
 SRCDIR = src
 OBJDIR = obj
 BINDIR = bin
@@ -15,7 +15,7 @@ LIBFT = include/libft/bin/libft.a
 MLX = include/mlx/libmlx.a
 
 #Only for MLX proyects
-OLD_MAKE = /usr/bin/make3.81 
+OLD_MAKE = make #/usr/bin/make3.81 
 
 all: 
 	@$(MAKE) -sC include/libft
