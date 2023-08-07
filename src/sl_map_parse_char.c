@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sl_map_parse_char.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
+/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 10:22:51 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/06 16:52:31 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/07 20:51:03 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	sl_map_parse_chars(t_game *g, char a)
 {
 	int	i;
-	int flag;
+	int	flag;
 
 	i = 0;
 	flag = 0;
@@ -38,7 +38,7 @@ static int	sl_map_parse_chars(t_game *g, char a)
 	return (1);
 }
 
-int sl_map_parse_incorrect_chars(t_game *g)
+int	sl_map_parse_incorrect_chars(t_game *g)
 {
 	int		i;
 	int		j;

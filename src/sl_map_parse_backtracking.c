@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   sl_map_parse_backtracking.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
+/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 17:02:37 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/06 19:06:09 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/07 20:50:39 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-static void sl_map_count_rows_cols(t_game *g)
+static void	sl_map_count_rows_cols(t_game *g)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (g->map[i])
@@ -23,10 +23,10 @@ static void sl_map_count_rows_cols(t_game *g)
 	g->col = ft_strlen(g->map[0]);
 }
 
-static void sl_bt_starting(t_game *g)
+static void	sl_bt_starting(t_game *g)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	(0 || (i = 0) || (j = 0) || (g->c = 0) || \
 		(g->p_row = 0) || (g->p_col = 0));
@@ -50,7 +50,7 @@ static void sl_bt_starting(t_game *g)
 	}
 }
 
-static void sl_bt(t_game *g, int i, int j)
+static void	sl_bt(t_game *g, int i, int j)
 {
 	while (g->mapcpy[i][j] != '1' && g->mapcpy[i][j] != 'X')
 	{
@@ -66,7 +66,7 @@ static void sl_bt(t_game *g, int i, int j)
 	}
 }
 
-void sl_map_backtracking(t_game *g)
+void	sl_map_backtracking(t_game *g)
 {
 	sl_map_count_rows_cols(g);
 	sl_bt_starting(g);

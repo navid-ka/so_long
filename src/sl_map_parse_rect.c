@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sl_map_parse_rect.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
+/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:15:05 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/03 12:23:56 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/07 20:51:22 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ int	sl_map_parse_rect(t_game *g)
 	return (1);
 }
 
-static void sl_map_count_rows_cols(t_game *g)
+static void	sl_map_count_rows_cols(t_game *g)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (g->map[i])
