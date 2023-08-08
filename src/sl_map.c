@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sl_map.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
+/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 13:09:43 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/07 20:51:30 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/08/08 13:47:12 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,13 @@ void	sl_map_read(int fd, t_game *g)
 void	sl_map_parser(t_game *g)
 {
 	if (sl_map_parse_rect(g) == 0)
-		ft_printf("Error map not rect\n");
+		sl_map_exit(g->map, NOT_RECT, "Error map not rect\n");
 	else if (sl_map_parse_walls(g) > 0)
-		ft_printf("Error map no walls\n");
+		sl_map_exit(g->map, NOT_WALLS, "Error map have incorrect size/walls\n");
 	else if (sl_map_parse_char(g) == 0)
-		ft_printf("Error not correct chars: more or less valid chars\n");
+		sl_map_exit(g->map, NOT_CHARS, "Error duplicate or missing chars\n");
 	else if (sl_map_parse_incorrect_chars(g) == 0)
-		ft_printf("Error invalid chars\n");
+		sl_map_exit(g->map, BAD_CHARS, "Error invalid chars\n");
 	sl_map_backtracking(g);
 }
 

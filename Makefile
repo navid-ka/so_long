@@ -3,9 +3,9 @@ CFLAGS = -Wall -Werror -Wextra #-g -fsanitize=address
 SRCDIR = src
 OBJDIR = obj
 BINDIR = bin
-HEADERS = include/so_long.h include/struct.h include/defines.h
+HEADERS = include/so_long.h include/struct.h include/defines.h include/errors.h
 SRC = 	src/main.c src/sl_map.c src/sl_map_parse_rect.c src/sl_map_parse_char.c \
-		src/sl_map_parse_backtracking.c
+		src/sl_map_parse_backtracking.c src/sl_errors.c
 OBJECTS = $(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(SRC))
 COLOR_RESET = $(shell tput sgr0)
 COLOR = $(shell tput setaf 2)
@@ -15,7 +15,7 @@ LIBFT = include/libft/bin/libft.a
 MLX = include/mlx/libmlx.a
 
 #Only for MLX proyects
-OLD_MAKE = make #/usr/bin/make3.81 
+OLD_MAKE = /usr/bin/make3.81 #make
 
 all: 
 	@$(MAKE) -sC include/libft

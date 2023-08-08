@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 23:22:31 by bifrost           #+#    #+#             */
-/*   Updated: 2023/08/06 18:47:45 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/08 12:55:21 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <stdbool.h>
 # include "defines.h"
 # include "struct.h"
+# include "errors.h"
 
 // mlx main loop
 void	sl_mlx_init();
@@ -36,16 +37,10 @@ int		sl_map_parse_walls(t_game *g);
 int		sl_map_parse_char(t_game *g);
 int		sl_map_parse_incorrect_chars(t_game *g);
 void	sl_map_backtracking(t_game *g);
-void	sl_map_cpy(t_game *g);
 
-//player
-void	sl_player_load();	
-void	sl_player_create();	
-void	solong_player_destroy();
+// Error handling
 
-//entity 
-void	sl_entity_load();	
-void	sl_entity_create();	
-void	sl_entity_destroy();
+void	sl_map_exit(char **map, int enum_msg, char *error_msg);
+void	sl_free(char **map);
 
 #endif

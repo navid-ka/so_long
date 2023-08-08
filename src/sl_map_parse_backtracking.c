@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sl_map_parse_backtracking.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
+/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 17:02:37 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/07 20:50:39 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/08/08 13:52:51 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	sl_map_backtracking(t_game *g)
 		ft_printf("%s\n", g->mapcpy[i]);
 	}
 	if (g->c != 0)
-		ft_printf("Map does not have a valid path.\n");
+		sl_map_exit(g->mapcpy, NO_PATH, "Error not valid path not coins blocked.\n");
 	if (g->e != 0)
-		ft_printf("Map does not have a valid path.\n");
+		sl_map_exit(g->mapcpy, NO_PATH, "Error Map does not have a valid exit.\n");
 }

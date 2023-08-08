@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 23:21:56 by bifrost           #+#    #+#             */
-/*   Updated: 2023/08/02 12:25:30 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/08 12:57:09 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int	main(int argc, char **argv)
 
 	(void)argc;
 	printf("LOADING\n");
-	g = malloc(sizeof (t_game));
+	g = (t_game *)malloc(sizeof (t_game));
 
 	//sl_game_start(g);
 	sl_map_init(argv, g);
