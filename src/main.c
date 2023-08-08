@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 23:21:56 by bifrost           #+#    #+#             */
-/*   Updated: 2023/08/08 14:13:30 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/08 18:18:05 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ int	sl_game_read_keys(int key_pressed, t_game *g)
 
 void	sl_game_load_assets(t_game *g)
 {
-	g->h = 32;
-	g->w = 32;
+	g->h = 64;
+	g->w = 64;
 	g->w_w = W_W;
 	g->h_w = W_H;
 	g->p = mlx_xpm_file_to_image(g->mlx, "assets/player.xpm", &g->w, &g->h);
