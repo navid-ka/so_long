@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 23:21:56 by bifrost           #+#    #+#             */
-/*   Updated: 2023/08/08 12:57:09 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/08 14:13:30 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ int	main(int argc, char **argv)
 	//sl_map_init(argv, g);
 	//mlx_loop(g->mlx);
 	//mlx_destroy(g->mlx);
+	sl_free(g->map);
 	free(g);
-	return (0);
+	exit(EXIT_FAILURE);
 }
