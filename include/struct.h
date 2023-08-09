@@ -6,12 +6,21 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 10:32:23 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/06 19:02:52 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/09 18:40:52 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCT_H
 # define STRUCT_H
+
+typedef struct s_img
+{
+	void	*img_ptr;
+	int		*data;
+	int		size_l;
+	int		bpp;
+	int		endian;
+}	t_img;
 
 typedef struct s_game
 {
@@ -19,9 +28,10 @@ typedef struct s_game
 	void		*win;
 	char		*img;
 	void		*p;
+	void		*bg;
+	t_img		*img;
 	char		**map;
 	char		**mapcpy;
-	void		*bg;
 	char		*asset;
 	int			h;
 	int			w;
