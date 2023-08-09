@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 17:02:37 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/08 14:14:45 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/09 13:36:57 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static void	sl_bt_starting(t_game *g)
 	int	j;
 
 	(0 || (i = 0) || (j = 0) || (g->c = 0) || \
-		(g->p_row = 0) || (g->p_col = 0));
+		(g->p_row = 0) || (g->p_col = 0) || (g->e = 0));
 	while (g->mapcpy[i])
 	{
 		while (g->mapcpy[i][j])
@@ -79,6 +79,8 @@ void	sl_map_backtracking(t_game *g)
 	if (g->c != 0)
 		sl_map_exit(g->mapcpy, NO_PATH, \
 		"Error not valid path not coins blocked.\n");
+	ft_printf("%d\n", g->e);
+	ft_printf("%d\n", g->c);
 	if (g->e != 0)
 		sl_map_exit(g->mapcpy, NO_PATH, \
 		"Error Map does not have a valid exit.\n");

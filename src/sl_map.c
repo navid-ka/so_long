@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 13:09:43 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/08 14:40:27 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/09 13:31:00 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,12 +70,13 @@ void	sl_map_init(char **argv, t_game *g)
 {
 	int		fd;
 	char	*str;
+	int		len;
 
 	str = argv[1];
-	while (*str != '.')
-		str++;
-	if ((str + 1) == ft_strnstr(str + 1, "ber", 3) && !(str + 4))
-		sl_map_exit(NULL, NOT_BER, "Error no .ber file\n");
+	len = ft_strlen(str);
+	if (!(str[len - 1] == 'r' && str[len - 2] == 'e' && str[len - 3] == 'b'
+			&& str[len - 4] == '.'))
+		exit(1);
 	fd = open(argv[1], O_RDONLY);
 	if (!fd)
 		exit(1);

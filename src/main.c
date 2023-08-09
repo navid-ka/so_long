@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 23:21:56 by bifrost           #+#    #+#             */
-/*   Updated: 2023/08/08 18:18:05 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/09 13:55:30 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,14 +83,14 @@ int	main(int argc, char **argv)
 	printf("LOADING\n");
 	g = (t_game *)malloc(sizeof (t_game));
 
-	//sl_game_start(g);
 	sl_map_init(argv, g);
-	//g->win = ;
+	//g->mlx = mlx_init();
+	//g->win = mlx_new_window(g->mlx, W_W, W_H, TITLE);
 	//sl_game_start(g);
 	//sl_map_init(argv, g);
 	//mlx_loop(g->mlx);
 	//mlx_destroy(g->mlx);
 	sl_free(g->map);
 	free(g);
-	exit(EXIT_FAILURE);
+	return (0);
 }
