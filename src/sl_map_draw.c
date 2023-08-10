@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 17:58:14 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/08 18:31:16 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/10 11:27:25 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,26 @@ void	sl_draw_map(t_game *g)
 	int	i;
 	int	j;
 
-	i = 0;
-	
-	while (g->map[i])
+	i = -1;
+	j = 0;
+	while (g->map[++i])
 	{
-		(g->map[0][0] && mlx_put_image_to_window(g->mlx, g->win, g->p, \
-					W_W / 2, W_H / 2));
-		(g->map[ft_strlen(g->map[i])][0] \
-		&& mlx_put_image_to_window(g->mlx, g->win, g->p, W_W / 2, W_H / 2));
+		while (g->map[i][j])
+		{
+			if (g->map[i][j] == '1')
+				mlx_put_image_to_window(g->mlx, g->win, g->img[0].img_ptr, \
+					i * 64, j * 64);
+			if (g->map[i][j] == '0' && g->map[i][j] == 'P')
+				mlx_put_image_to_window(g->mlx, g->win, g->img[2].img_ptr, \
+					i * 64, j * 64);
+			if (g->map[i][j] == 'C')
+				mlx_put_image_to_window(g->mlx, g->win, g->img[1].img_ptr, \
+					i * 64, j * 64);
+			if (g->map[i][j] == 'E')
+				mlx_put_image_to_window(g->mlx, g->win, g->img[3].img_ptr, \
+					i * 64, j * 64);
+			j++;
+		}
+		j = 0;
 	}
 }

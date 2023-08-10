@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 10:32:23 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/09 18:40:52 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/10 11:49:26 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ typedef struct s_game
 {
 	void		*mlx;
 	void		*win;
-	char		*img;
 	void		*p;
 	void		*bg;
 	t_img		*img;
@@ -45,5 +44,6 @@ typedef struct s_game
 	int			col;
 	int			row;
 }	t_game;
+
 
 #endif

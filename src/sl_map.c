@@ -6,13 +6,13 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 13:09:43 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/09 13:31:00 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/10 12:35:32 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-void	sl_map_read(int fd, t_game *g)
+static void	sl_map_read(int fd, t_game *g)
 {
 	char	*line;
 	char	*tmp_line;
@@ -48,7 +48,7 @@ void	sl_map_read(int fd, t_game *g)
 	free(all_lines);
 }
 
-void	sl_map_parser(t_game *g)
+static void	sl_map_parser(t_game *g)
 {
 	if (sl_map_parse_rect(g) == 0)
 		sl_map_exit(g->map, NOT_RECT, "Error map not rect\n");
@@ -61,11 +61,6 @@ void	sl_map_parser(t_game *g)
 	sl_map_backtracking(g);
 }
 
-/*void	sl_map_draw(t_game *g)
-{
-	
-}
-*/
 void	sl_map_init(char **argv, t_game *g)
 {
 	int		fd;

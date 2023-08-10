@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sl_map_parse_rect.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
+/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:15:05 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/07 20:51:22 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/08/10 12:40:14 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
