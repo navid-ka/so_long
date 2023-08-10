@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 23:22:31 by bifrost           #+#    #+#             */
-/*   Updated: 2023/08/10 15:47:39 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/10 19:52:31 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	sl_mlx_init();
 //Image and drawing
 
 void	sl_image_init(t_game *g);
-void	sl_draw_player(t_game *g);
+void	sl_draw_entities(t_game *g);
 void	sl_draw_map(t_game *g);
 
 //map

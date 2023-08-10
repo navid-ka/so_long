@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 23:21:56 by bifrost           #+#    #+#             */
-/*   Updated: 2023/08/10 18:16:05 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/10 20:06:33 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ void	sl_game_dimension(t_game *g)
 	i = 0;
 	while (g->map[i])
 		i++;
-	g->w_w = i;
-	g->h_w = ft_strlen(g->map[0]);
+	g->h_w = i;
+	g->w_w = ft_strlen(g->map[0]);
 }
 
 int	sl_game_read_keys(int key_pressed, t_game *g)
@@ -62,7 +62,7 @@ int	main(int argc, char **argv)
 	sl_game_start(g);
 	sl_image_init(g);
 	sl_draw_map(g);
-	sl_draw_player(g);
+	sl_draw_entities(g);
 	mlx_loop(g->mlx);
 	mlx_destroy(g->mlx);
 	sl_free(g->map);
