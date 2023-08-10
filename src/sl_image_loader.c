@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 18:39:02 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/10 12:23:41 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/10 15:41:46 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,15 @@ static void	sl_image_data(t_game *g)
 			&g->img[2].bpp, &g->img[2].size_l, &g->img[2].endian);
 	g->img[3].data = (int *)mlx_get_data_addr(g->img[3].img_ptr,
 			&g->img[3].bpp, &g->img[3].size_l, &g->img[3].endian);
+	g->img[4].data = (int *)mlx_get_data_addr(g->img[4].img_ptr,
+			&g->img[4].bpp, &g->img[4].size_l, &g->img[4].endian);
 }
 
 void	sl_image_init(t_game *g)
 {
-	g->h = 64;
-	g->w = 64;
-	g->img = malloc(sizeof(t_img) * (4 + 1));
+	g->h = 32;
+	g->w = 32;
+	g->img = malloc(sizeof(t_img) * (5 + 1));
 	g->img[0].img_ptr = mlx_xpm_file_to_image(g->mlx,
 			"assets/wall.xpm", &g->w, &g->h);
 	g->img[1].img_ptr = mlx_xpm_file_to_image(g->mlx,
@@ -37,5 +39,7 @@ void	sl_image_init(t_game *g)
 			"assets/path.xpm", &g->w, &g->h);
 	g->img[3].img_ptr = mlx_xpm_file_to_image(g->mlx,
 			"assets/door.xpm", &g->w, &g->h);
+	g->img[4].img_ptr = mlx_xpm_file_to_image(g->mlx,
+			"assets/player.xpm", &g->w, &g->h);
 	sl_image_data(g);
 }

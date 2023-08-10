@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 23:21:56 by bifrost           #+#    #+#             */
-/*   Updated: 2023/08/10 12:50:41 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/10 15:48:46 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,13 @@ int	sl_game_read_keys(int key_pressed, t_game *g)
 		ft_printf("KEY PRESSED:		%d\n", ESC);
 		sl_game_destroy(g);
 	}
-	write(1, "\n", 1);
 	return (0);
 }
 
 void	sl_game_load_assets(t_game *g)
 {
-	g->h = 64;
-	g->w = 64;
+	g->h = 32;
+	g->w = 32;
 	g->p = mlx_xpm_file_to_image(g->mlx, "assets/player.xpm", &g->w, &g->h);
 	printf("Player loaded in:		%p\n", g->p);
 	g->bg = mlx_xpm_file_to_image(g->mlx, "assets/bg.xpm", &g->w_w, &g->h_w);
@@ -75,10 +74,11 @@ int	main(int argc, char **argv)
 	sl_map_init(argv, g);
 	g->mlx = mlx_init();
 	sl_game_dimension(g);
-	g->win = mlx_new_window(g->mlx, g->w_w * 64, g->h_w * 64, TITLE);
+	g->win = mlx_new_window(g->mlx, g->w_w * 32, g->h_w * 32, TITLE);
 	sl_game_start(g);
 	sl_image_init(g);
 	sl_draw_map(g);
+	sl_draw_player(g);
 	mlx_loop(g->mlx);
 	mlx_destroy(g->mlx);
 	sl_free(g->map);
