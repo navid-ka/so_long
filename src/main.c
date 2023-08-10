@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 23:21:56 by bifrost           #+#    #+#             */
-/*   Updated: 2023/08/10 17:06:26 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/10 18:16:05 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,28 +38,11 @@ int	sl_game_read_keys(int key_pressed, t_game *g)
 		ft_printf("KEY PRESSED:		%d\n", ESC);
 		sl_game_destroy(g);
 	}
-	
 	return (0);
-}
-
-void	sl_game_load_assets(t_game *g)
-{
-	g->h = 32;
-	g->w = 32;
-	g->p = mlx_xpm_file_to_image(g->mlx, "assets/player.xpm", &g->w, &g->h);
-	printf("Player loaded in:		%p\n", g->p);
-	g->bg = mlx_xpm_file_to_image(g->mlx, "assets/bg.xpm", &g->w_w, &g->h_w);
-	printf("Background loaded in:		%p\n", g->bg);
 }
 
 void	sl_game_start(t_game *g)
 {
-	sl_game_load_assets(g);
-	mlx_put_image_to_window(g->mlx, g->win, g->bg, 0, 0);
-	//mlx_put_image_to_window(g->mlx, g->win, g->p, \
-					//W_W / 2, W_H / 2);
-	//mlx_string_put(g->mlx, g->win, W_W / 2 - 10, W_H / 2 + 50, \
-					//0x00AACCFF, "Player");
 	mlx_key_hook(g->win, sl_game_read_keys, g);
 	mlx_hook(g->win, 17, 0, sl_game_destroy, g);
 }

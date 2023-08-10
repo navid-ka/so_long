@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 17:58:14 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/10 15:46:59 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/10 18:18:01 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	sl_draw_map(t_game *g)
 			if (g->map[i][j] == '1')
 				mlx_put_image_to_window(g->mlx, g->win, g->img[0].img_ptr, \
 					i * 32, j * 32);
-			if (g->map[i][j] == '0' && g->map[i][j] == 'P')
+			if (g->map[i][j] == '0' || g->map[i][j] == 'P')
 				mlx_put_image_to_window(g->mlx, g->win, g->img[2].img_ptr, \
 					i * 32, j * 32);
 			if (g->map[i][j] == 'C')
