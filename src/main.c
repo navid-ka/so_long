@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 23:21:56 by bifrost           #+#    #+#             */
-/*   Updated: 2023/08/10 15:48:46 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/10 17:06:26 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int	sl_game_read_keys(int key_pressed, t_game *g)
 		ft_printf("KEY PRESSED:		%d\n", ESC);
 		sl_game_destroy(g);
 	}
+	
 	return (0);
 }
 
