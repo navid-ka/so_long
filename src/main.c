@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 23:21:56 by bifrost           #+#    #+#             */
-/*   Updated: 2023/08/11 17:10:42 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/11 19:01:32 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ int	sl_game_read_keys(int key_pressed, t_game *g)
 		ft_printf("KEY PRESSED:		%d\n", ESC);
 		sl_game_destroy(g);
 	}
-	
 	if (key_pressed == ARROW_UP || key_pressed == W)
 		sl_player_mov_up(g);
 	else if (key_pressed == ARROW_LEFT || key_pressed == A)
@@ -68,7 +67,7 @@ int	main(int argc, char **argv)
 	g->mlx = mlx_init();
 	sl_game_dimension(g);
 	g->win = mlx_new_window(g->mlx, g->w_w * 32, g->h_w * 32, TITLE);
-	g->mov = 0;
+	g->mov = 1;
 	sl_image_init(g);
 	sl_draw_map(g);
 	sl_game_start(g);

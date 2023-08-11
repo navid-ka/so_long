@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 17:58:14 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/11 16:57:29 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/11 18:51:13 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	sl_draw_entities(t_game *g)
 	int	j;
 
 	i = 0;
+	g->coin = 0;
 	while (g->map[i])
 	{
 		j = 0;
@@ -51,8 +52,11 @@ void	sl_draw_entities(t_game *g)
 				mlx_put_image_to_window(g->mlx, g->win, g->img[4].img_ptr, \
 					j * 32, i * 32);
 			if (g->map[i][j] == 'C')
+			{
 				mlx_put_image_to_window(g->mlx, g->win, g->img[1].img_ptr, \
 					j * 32, i * 32);
+				g->coin++;
+			}
 			if (g->map[i][j] == 'E')
 				mlx_put_image_to_window(g->mlx, g->win, g->img[3].img_ptr, \
 					j * 32, i * 32);
