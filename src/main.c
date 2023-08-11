@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 23:21:56 by bifrost           #+#    #+#             */
-/*   Updated: 2023/08/10 20:06:33 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/11 14:26:22 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,21 @@ int	sl_game_read_keys(int key_pressed, t_game *g)
 		ft_printf("KEY PRESSED:		%d\n", ESC);
 		sl_game_destroy(g);
 	}
+	
+	if (key_pressed == ARROW_UP || key_pressed == W)
+		sl_player_mov_up(g);
+	else if (key_pressed == ARROW_LEFT || key_pressed == A)
+		return ('A');
+	else if (key_pressed == ARROW_DOWN || key_pressed == S)
+		return ('S');
+	else if (key_pressed == ARROW_RIGHT || key_pressed == D)
+		return ('D');
 	return (0);
 }
-
 void	sl_game_start(t_game *g)
 {
 	mlx_key_hook(g->win, sl_game_read_keys, g);
+	sl_draw_map(g);
 	mlx_hook(g->win, 17, 0, sl_game_destroy, g);
 }
 
@@ -59,10 +68,11 @@ int	main(int argc, char **argv)
 	g->mlx = mlx_init();
 	sl_game_dimension(g);
 	g->win = mlx_new_window(g->mlx, g->w_w * 32, g->h_w * 32, TITLE);
-	sl_game_start(g);
+	
+	g->mov = 0;
 	sl_image_init(g);
 	sl_draw_map(g);
-	sl_draw_entities(g);
+	sl_game_start(g);
 	mlx_loop(g->mlx);
 	mlx_destroy(g->mlx);
 	sl_free(g->map);

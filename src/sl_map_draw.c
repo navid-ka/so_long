@@ -6,13 +6,13 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 17:58:14 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/10 20:08:00 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/11 12:05:33 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-void	sl_draw_map(t_game *g)
+void	sl_draw_walls_and_path(t_game *g)
 {
 	int	i;
 	int	j;
@@ -60,4 +60,10 @@ void	sl_draw_entities(t_game *g)
 		}
 		i++;
 	}
+}
+void	sl_draw_map(t_game *g)
+{
+	sl_draw_walls_and_path(g);
+	sl_draw_entities(g);
+	
 }
