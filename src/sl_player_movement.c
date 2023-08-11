@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 16:16:43 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/11 14:26:55 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/11 14:34:41 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,15 @@ void	sl_player_mov_up(t_game *g)
 		ft_printf("VALUES NEXT: ROW=%d COL=%d VAL=%c\n",row - 1,col,map[row - 1][col]);
 		g->map[((g->p_row) - 1)][(g->p_col)] = 'P';
 		ft_printf("VALUES ACT: ROW=%d COL=%d VAL=%c\n",row - 1,col,map[row - 1][col]);
+		g->map[g->p_row][g->p_col] = g->map[((g->p_row) - 1)][(g->p_col)];
 		ft_printf("Player move %d\n", g->mov);
 		g->mov = g->mov + 1;
-		g->map[g->p_row][g->p_col] = '0';
+		g->map[g->p_row + 1][g->p_col] = '0';
 		ft_printf("VALUES ACT: ROW=%d COL=%d VAL=%c\n",row,col,map[row][col]);
-		/*mlx_put_image_to_window(g->mlx, g->win, g->img[4].img_ptr, \
+		mlx_put_image_to_window(g->mlx, g->win, g->img[4].img_ptr, \
 					g->p_col * 32, g->p_row - 1 * 32);
 		mlx_put_image_to_window(g->mlx, g->win, g->img[2].img_ptr, \
-					g->p_col * 32, g->p_row  * 32);*/
+					g->p_col * 32, g->p_row  * 32);
 	//}
 }
 

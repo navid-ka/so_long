@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 23:21:56 by bifrost           #+#    #+#             */
-/*   Updated: 2023/08/11 14:26:22 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/11 14:31:32 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	sl_game_read_keys(int key_pressed, t_game *g)
 void	sl_game_start(t_game *g)
 {
 	mlx_key_hook(g->win, sl_game_read_keys, g);
-	sl_draw_map(g);
+	//sl_draw_map(g);
 	mlx_hook(g->win, 17, 0, sl_game_destroy, g);
 }
 
