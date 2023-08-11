@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 13:09:43 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/10 12:35:32 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/11 20:22:39 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ static void	sl_map_read(int fd, t_game *g)
 	char	*tmp_line;
 	char	*all_lines;
 
-
 	line = ft_strdup("");
 	all_lines = ft_strdup("");
 	while (line)
@@ -28,7 +27,7 @@ static void	sl_map_read(int fd, t_game *g)
 		if (line && line[0] == '\n')
 		{
 			free(line);
-			ft_printf("%s\n", "Error empieza por \\n");
+			ft_printf("%s\n", "Error the map contains \\n");
 			exit(1);
 		}
 		tmp_line = all_lines;
@@ -37,14 +36,11 @@ static void	sl_map_read(int fd, t_game *g)
 	}
 	if (ft_strcmp(all_lines, "") == 0)
 	{
-		ft_printf("%s\n", "NULL \\n");
+		ft_printf("%s\n", "Error map contains \\n");
 		exit(1);
-		}
+	}
 	g->map = ft_split(all_lines, '\n');
 	g->mapcpy = ft_split(all_lines, '\n');
-	for (size_t i = 0; g->mapcpy[i]; i++){
-        ft_printf("%s\n", g->mapcpy[i]);
-    }
 	free(all_lines);
 }
 

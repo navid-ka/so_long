@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 10:49:18 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/08 13:43:26 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/11 20:55:50 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,7 @@ void	sl_map_exit(char **map, int enum_msg, char *error_msg)
 	if (enum_msg == BAD_CHARS)
 		sl_free_msg(map, error_msg);
 	if (enum_msg == NO_PATH)
+		sl_free_msg(map, error_msg);
+	if (enum_msg == FINISH)
 		sl_free_msg(map, error_msg);
 }

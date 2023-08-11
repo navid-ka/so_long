@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:15:05 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/10 12:40:14 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/11 20:22:59 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int	sl_map_parse_rect(t_game *g)
 			return (0);
 		i++;
 	}
-	ft_printf("Map is rect\n");
 	return (1);
 }
 

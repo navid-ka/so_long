@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 23:21:56 by bifrost           #+#    #+#             */
-/*   Updated: 2023/08/11 19:01:32 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/11 20:56:35 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 
 int	sl_game_destroy(t_game *g)
 {
-	//mlx_destroy_window(g->mlx, g->mlx_win);
-	free(g);
+	//mlx_destroy_window(g->mlx, g->mlx);
+	sl_map_exit(g->map, FINISH, \
+		"Game over.\n");
 	exit(0);
 }
 
@@ -59,21 +60,24 @@ int	main(int argc, char **argv)
 {
 	t_game	*g;
 
-	(void)argc;
-	printf("LOADING\n");
-	g = (t_game *)malloc(sizeof (t_game));
-
-	sl_map_init(argv, g);
-	g->mlx = mlx_init();
-	sl_game_dimension(g);
-	g->win = mlx_new_window(g->mlx, g->w_w * 32, g->h_w * 32, TITLE);
-	g->mov = 1;
-	sl_image_init(g);
-	sl_draw_map(g);
-	sl_game_start(g);
-	mlx_loop(g->mlx);
-	mlx_destroy(g->mlx);
-	sl_free(g->map);
-	free(g);
+	if (argc == 2)
+	{
+		printf("LOADING\n");
+		g = (t_game *)malloc(sizeof (t_game));
+		sl_map_init(argv, g);
+		g->mlx = mlx_init();
+		sl_game_dimension(g);
+		g->win = mlx_new_window(g->mlx, g->w_w * 32, g->h_w * 32, TITLE);
+		g->mov = 1;
+		sl_image_init(g);
+		sl_draw_map(g);
+		sl_game_start(g);
+		mlx_loop(g->mlx);
+		mlx_destroy(g->mlx);
+		sl_free(g->map);
+		free(g);
+	}
+	else
+		ft_printf("Error no map provided.");
 	return (0);
 }

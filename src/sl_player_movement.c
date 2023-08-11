@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 16:16:43 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/11 19:01:11 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/11 20:57:39 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,23 @@ void	sl_take_coin(t_game *g, int row, int col)
 	}
 }
 
+int	sl_game_read_keys_finish(int key_pressed, t_game *g)
+{
+	if (key_pressed == ESC)
+	{
+		ft_printf("KEY PRESSED:		%d\n", ESC);
+		sl_game_destroy(g);
+	}
+	return (0);
+}
+
 void	sl_game_finish(t_game *g, int row, int col)
 {
 	if (g->map[row][col] == 'E' && g->coin == 0)
 	{
-		mlx_string_put(g->mlx, g->win, (g->w_w * 32) / 2 - 96, (g->h_w * 32) / 2, 0x00FFFFFFF, "WOoooooooNNNNN 42 no long");
+		mlx_key_hook(g->win, sl_game_read_keys_finish, g);
+		mlx_string_put(g->mlx, g->win, (g->w_w * 32) / 2 - 96, \
+			(g->h_w * 32) / 2, 0x00FFFFFFF, "over");
 	}
 }
 
@@ -57,7 +69,6 @@ void	sl_player_mov_up(t_game *g)
 					g->p_col * 32, g->p_row * 32);
 		ft_printf("Player move %d\n", g->mov);
 		g->mov = g->mov + 1;
-		//sl_draw_map(g);
 	}
 }
 
@@ -66,7 +77,6 @@ void	sl_player_mov_down(t_game *g)
 	if (sl_move_is_valid(g, g->p_row + 1, g->p_col))
 	{
 		sl_take_coin(g, g->p_row + 1,  g->p_col);
-		sl_game_finish(g, g->p_row + 1,  g->p_col);
 		if (g->map[g->p_row][g->p_col] == 'E')
 			mlx_put_image_to_window(g->mlx, g->win, g->img[3].img_ptr, \
 					g->p_col * 32, g->p_row * 32);
@@ -78,6 +88,7 @@ void	sl_player_mov_down(t_game *g)
 					g->p_col * 32, g->p_row * 32);
 		ft_printf("Player move %d\n", g->mov);
 		g->mov = g->mov + 1;
+		sl_game_finish(g, g->p_row + 1,  g->p_col);
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 23:22:31 by bifrost           #+#    #+#             */
-/*   Updated: 2023/08/11 17:09:21 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/11 20:36:38 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,6 @@ void	sl_player_mov_left(t_game *g);
 
 void	sl_map_exit(char **map, int enum_msg, char *error_msg);
 void	sl_free(char **map);
+int		sl_game_destroy(t_game *g);
 
 #endif
