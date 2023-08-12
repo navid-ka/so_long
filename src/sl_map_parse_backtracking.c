@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 17:02:37 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/12 23:48:28 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/08/13 00:20:04 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,10 +72,6 @@ void	sl_map_backtracking(t_game *g)
 	sl_bt_starting(g);
 	ft_printf("INFO: Player position	(%d,%d)\n", g->p_row, g->p_col);
 	sl_bt(g, g->p_row, g->p_col);
-
-	for (size_t i = 0; g->mapcpy[i]; i++){
-		ft_printf("%s\n", g->mapcpy[i]);
-	}
 	if (g->c != 0)
 		sl_map_exit(g->mapcpy, NO_PATH, \
 		"Error not valid path not coins blocked.\n");
