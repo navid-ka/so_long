@@ -1,48 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   struct.h                                           :+:      :+:    :+:   */
+/*   sl_var_init.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/24 10:32:23 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/12 23:29:59 by bifrost          ###   ########.fr       */
+/*   Created: 2023/08/12 23:25:20 by bifrost           #+#    #+#             */
+/*   Updated: 2023/08/12 23:39:18 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCT_H
-# define STRUCT_H
+#include "../../include/so_long.h"
 
-typedef struct s_img
+void    sl_var_init(t_game *g)
 {
-	void	*img_ptr;
-	int		*data;
-	int		size_l;
-	int		bpp;
-	int		endian;
-}	t_img;
-
-typedef struct s_game
-{
-	void		*mlx;
-	void		*win;
-	void		*bg;
-	t_img		*img;
-	char		**map;
-	char		**mapcpy;
-	int			h;
-	int			w;
-	int			e;
-	int			c;
-	int			coin;
-	int			mov;
-	int			h_w;
-	int			w_w;
-	int			p_col;
-	int			p_row;
-	int			col;
-	int			row;
-}	t_game;
-
-
-#endif
+	g->h = 0;
+	g->w = 0;
+	g->e = 0;
+	g->c = 0;
+	g->coin = 0;
+	g->mov = 1;
+	g->h_w = 0;
+	g->w_w = 0;
+	g->p_col = 0;
+	g->p_row = 0;
+	g->col = 0;
+	g->row = 0;
+}

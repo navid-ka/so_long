@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sl_map_parse_backtracking.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
+/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 17:02:37 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/11 18:50:27 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/12 23:48:28 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ static void	sl_bt_starting(t_game *g)
 	int	i;
 	int	j;
 
-	(0 || (i = 0) || (j = 0) || (g->c = 0) || \
-		(g->p_row = 0) || (g->p_col = 0) || (g->e = 0));
+	i = 0;
+	j = 0;
 	while (g->mapcpy[i])
 	{
 		while (g->mapcpy[i][j])

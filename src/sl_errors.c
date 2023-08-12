@@ -3,14 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   sl_errors.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
+/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 10:49:18 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/11 20:55:50 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/12 23:44:52 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
+
+int	sl_game_destroy(t_game *g)
+{
+	//mlx_destroy_window(g->mlx, g->win);
+	sl_map_exit(g->map, FINISH, \
+		"Game over.\n");
+	exit(0);
+}
 
 void	sl_free(char **map)
 {
