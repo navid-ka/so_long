@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sl_map_parse_rect.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
+/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:15:05 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/11 20:22:59 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/13 00:14:10 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ static int	sl_map_parse_walls_rows(t_game *g)
 
 	i = 0;
 	sl_map_count_rows_cols(g);
-	//cuenta 1 en fila superior
 	while (g->map[0][i] == '1' )
 	{
 		if (g->map[0][i] != '1')
@@ -54,7 +53,6 @@ static int	sl_map_parse_walls_rows(t_game *g)
 		i++;
 	}
 	i = 0;
-	//cuenta i en fila inferior
 	while (g->map[g->row - 1][i])
 	{
 		if (g->map[g->row - 1][i] != '1')
@@ -70,14 +68,12 @@ static int	sl_map_parse_walls_cols(t_game *g)
 
 	i = 0;
 	sl_map_count_rows_cols(g);
-	/*cuenta 1 en primera columna*/
 	while (g->map[i])
 	{
 		if (g->map[i][0] != '1' && g->map[i][g->col - 1] != '1')
 			return (1);
 		i++;
 	}
-	/*contar 1 en ultima columna*/
 	i = 0;
 	while (g->map[i])
 	{
