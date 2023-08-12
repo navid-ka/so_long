@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 23:22:31 by bifrost           #+#    #+#             */
-/*   Updated: 2023/08/12 23:45:44 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/08/13 00:03:38 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,10 @@ void	sl_player_mov_down(t_game *g);
 void	sl_player_mov_right(t_game *g);
 void	sl_player_mov_left(t_game *g);
 int     sl_game_read_keys(int key_pressed, t_game *g);
+void	sl_game_finish(t_game *g, int row, int col);
+int	    sl_game_read_keys_finish(int key_pressed, t_game *g);
+void	sl_take_coin(t_game *g, int row, int col);
+int     sl_move_is_valid(t_game *g, int row, int col);
 
 // Error handling
 
