@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 10:49:18 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/12 23:44:52 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/08/13 00:12:02 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,11 @@ void	sl_free_msg(char **map, char *error_msg)
 	sl_free(map);
 	ft_printf("%s", error_msg);
 	exit(EXIT_FAILURE);
+}
+void	sl_exit_nw(void)
+{
+		ft_printf("%s\n", "Error map contains at the start or in the middle \\n");
+		exit(EXIT_FAILURE);
 }
 
 void	sl_map_exit(char **map, int enum_msg, char *error_msg)

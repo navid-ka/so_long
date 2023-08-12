@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sl_map.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
+/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 13:09:43 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/11 20:22:39 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/13 00:11:01 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,14 @@ static void	sl_map_read(int fd, t_game *g)
 		if (line && line[0] == '\n')
 		{
 			free(line);
-			ft_printf("%s\n", "Error the map contains \\n");
-			exit(1);
+			sl_exit_nw();
 		}
 		tmp_line = all_lines;
 		all_lines = ft_strjoin(tmp_line, line);
 		free(tmp_line);
 	}
 	if (ft_strcmp(all_lines, "") == 0)
-	{
-		ft_printf("%s\n", "Error map contains \\n");
-		exit(1);
-	}
+		sl_exit_nw();
 	g->map = ft_split(all_lines, '\n');
 	g->mapcpy = ft_split(all_lines, '\n');
 	free(all_lines);

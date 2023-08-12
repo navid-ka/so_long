@@ -6,7 +6,7 @@
 /*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 23:22:31 by bifrost           #+#    #+#             */
-/*   Updated: 2023/08/13 00:03:38 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/08/13 00:10:11 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,6 @@ int     sl_move_is_valid(t_game *g, int row, int col);
 void	sl_map_exit(char **map, int enum_msg, char *error_msg);
 void	sl_free(char **map);
 int		sl_game_destroy(t_game *g);
+void	sl_exit_nw(void);
 
 #endif
