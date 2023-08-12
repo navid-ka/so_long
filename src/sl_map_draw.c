@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sl_map_draw.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
+/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 17:58:14 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/11 18:51:13 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/13 00:19:10 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	sl_draw_walls_and_path(t_game *g)
 			if (g->map[i][j] == '1')
 				mlx_put_image_to_window(g->mlx, g->win, g->img[0].img_ptr, \
 					j * 32, i * 32);
-			if (g->map[i][j] == '0' || g->map[i][j] == 'P' || 
+			if (g->map[i][j] == '0' || g->map[i][j] == 'P' ||
 				g->map[i][j] == 'E' || g->map[i][j] == 'C')
 				mlx_put_image_to_window(g->mlx, g->win, g->img[2].img_ptr, \
 					j * 32, i * 32);
@@ -42,7 +42,6 @@ void	sl_draw_entities(t_game *g)
 	int	j;
 
 	i = 0;
-	g->coin = 0;
 	while (g->map[i])
 	{
 		j = 0;
@@ -70,5 +69,4 @@ void	sl_draw_map(t_game *g)
 {
 	sl_draw_walls_and_path(g);
 	sl_draw_entities(g);
-	
 }
