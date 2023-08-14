@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 23:22:31 by bifrost           #+#    #+#             */
-/*   Updated: 2023/08/14 12:39:43 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/14 18:10:44 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 # define SO_LONG_H
 # include <libft.h>
 # include <mlx.h>
-# include <stdint.h>
 # include <fcntl.h>
-# include <stdbool.h>
 # include "defines.h"
 # include "struct.h"
 # include "errors.h"

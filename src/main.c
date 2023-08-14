@@ -6,12 +6,11 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 23:21:56 by bifrost           #+#    #+#             */
-/*   Updated: 2023/08/14 13:47:33 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/14 18:10:20 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
-#include <stdio.h>
 
 void	sl_game_dimension(t_game *g)
 {
@@ -31,7 +30,7 @@ void	sl_game_start(t_game *g)
 	g->win = mlx_new_window(g->mlx, g->w_w * 32, g->h_w * 32, TITLE);
 	sl_image_init(g);
 	sl_draw_map(g);
-	mlx_key_hook(g->win, sl_game_read_keys, g);
+	mlx_hook(g->win, 2, 0, sl_game_read_keys, g);
 	mlx_hook(g->win, 17, 0, sl_game_destroy, g);
 }
 
@@ -41,7 +40,6 @@ int	main(int argc, char **argv)
 
 	if (argc == 2)
 	{
-		printf("LOADING\n");
 		g = (t_game *)malloc(sizeof (t_game));
 		sl_var_init(g);
 		sl_map_init(argv, g);
@@ -52,6 +50,6 @@ int	main(int argc, char **argv)
 		free(g);
 	}
 	else
-		ft_printf("Error no map provided.");
+		ft_printf("Error no map provided.\n");
 	return (0);
 }
