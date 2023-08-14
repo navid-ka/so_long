@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 10:49:18 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/14 11:37:13 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/14 12:23:02 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 int	sl_game_destroy(t_game *g)
 {
-	//free(g->img);
 	sl_map_exit(g->map, FINISH, \
 		"Game over.\n");
 	mlx_destroy_image(g->mlx, g->img);
 	mlx_destroy_window(g->mlx, g->win);
 	mlx_destroy(g->mlx);
 	free(g);
-
 	exit(0);
 }
 

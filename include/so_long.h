@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 23:22:31 by bifrost           #+#    #+#             */
-/*   Updated: 2023/08/14 11:41:43 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/14 12:22:26 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 
 // var init
 
-void    sl_var_init(t_game *g);
+void	sl_var_init(t_game *g);
 
 //Image and drawing
 
@@ -45,18 +45,17 @@ int		sl_map_parse_char(t_game *g);
 int		sl_map_parse_incorrect_chars(t_game *g);
 void	sl_map_backtracking(t_game *g);
 
-
 //Player movements
 
 void	sl_player_mov_up(t_game *g);
 void	sl_player_mov_down(t_game *g);
 void	sl_player_mov_right(t_game *g);
 void	sl_player_mov_left(t_game *g);
-int     sl_game_read_keys(int key_pressed, t_game *g);
+int		sl_game_read_keys(int key_pressed, t_game *g);
 void	sl_game_finish(t_game *g, int row, int col);
-int	    sl_game_read_keys_finish(int key_pressed, t_game *g);
+int		sl_game_read_keys_finish(int key_pressed, t_game *g);
 void	sl_take_coin(t_game *g, int row, int col);
-int     sl_move_is_valid(t_game *g, int row, int col);
+int		sl_move_is_valid(t_game *g, int row, int col);
 
 // Error handling
 

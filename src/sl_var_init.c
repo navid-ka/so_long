@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   sl_var_init.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
+/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 23:25:20 by bifrost           #+#    #+#             */
-/*   Updated: 2023/08/12 23:39:18 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/08/14 12:25:07 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-void    sl_var_init(t_game *g)
+void	sl_var_init(t_game *g)
 {
 	g->h = 0;
 	g->w = 0;

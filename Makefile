@@ -46,11 +46,6 @@ clean:
 
 re: fclean all
 
-p: 
-	make && make clean && make run
-run: 
-	exec ./bin/so_long
-
 pull: 
 	@git submodule update --init
 	@git submodule update --recursive --remote
