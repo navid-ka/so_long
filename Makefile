@@ -46,6 +46,10 @@ clean:
 
 re: fclean all
 
+norm: 
+	norminette ${SRCDIR}
+	norminette ${HEADERS}
+
 pull: 
 	@git submodule update --init
 	@git submodule update --recursive --remote

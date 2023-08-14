@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 00:01:39 by bifrost           #+#    #+#             */
-/*   Updated: 2023/08/14 11:46:18 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/14 13:24:59 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,7 @@ void	sl_take_coin(t_game *g, int row, int col)
 int	sl_game_read_keys_finish(int key_pressed, t_game *g)
 {
 	if (key_pressed == ESC)
-	{
-		ft_printf("KEY PRESSED:		%d\n", ESC);
 		sl_game_destroy(g);
-	}
 	return (0);
 }
 
@@ -44,9 +41,9 @@ void	sl_game_finish(t_game *g, int row, int col)
 {
 	if (g->map[row][col] == 'E' && g->coin == 0)
 	{
-		sl_draw_finish(g);
 		mlx_key_hook(g->win, sl_game_read_keys_finish, g);
-		mlx_string_put(g->mlx, g->win, (g->w_w * 32) / 2, \
-			(g->h_w * 32) / 2, 0x00FFFFFFF, "over");
+		sl_draw_finish(g);
+		mlx_string_put(g->mlx, g->win, (g->w_w * 32) / 2 - 20, \
+			(g->h_w * 32) / 2, 0x00000000, "SL END");
 	}
 }
