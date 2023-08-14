@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 10:49:18 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/14 12:23:02 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/14 12:40:23 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	sl_free_msg(char **map, char *error_msg)
 
 void	sl_exit_nw(void)
 {
-	ft_printf("%s\n", "Error map contains at the start or in the middle \\n");
+	ft_printf("%s\n", "Error map contains \\n or empty");
 	exit(EXIT_FAILURE);
 }
 

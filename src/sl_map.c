@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sl_map.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
+/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 13:09:43 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/13 00:11:01 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/08/14 12:42:50 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,10 @@ void	sl_map_init(char **argv, t_game *g)
 	len = ft_strlen(str);
 	if (!(str[len - 1] == 'r' && str[len - 2] == 'e' && str[len - 3] == 'b'
 			&& str[len - 4] == '.'))
+	{
+		ft_printf("%s\n", "Error incorrect file extension");
 		exit(1);
+	}
 	fd = open(argv[1], O_RDONLY);
 	if (!fd)
 		exit(1);
