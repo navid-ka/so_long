@@ -6,7 +6,7 @@
 /*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 00:01:39 by bifrost           #+#    #+#             */
-/*   Updated: 2023/08/14 13:24:59 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/14 13:40:06 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,6 @@ void	sl_game_finish(t_game *g, int row, int col)
 		mlx_key_hook(g->win, sl_game_read_keys_finish, g);
 		sl_draw_finish(g);
 		mlx_string_put(g->mlx, g->win, (g->w_w * 32) / 2 - 20, \
-			(g->h_w * 32) / 2, 0x00000000, "SL END");
+			(g->h_w * 32) / 2, 0x00FFFFFF, "SL END");
 	}
 }
