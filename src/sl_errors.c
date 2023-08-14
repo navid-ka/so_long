@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sl_errors.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
+/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 10:49:18 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/13 00:16:15 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/08/14 11:37:13 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,14 @@
 
 int	sl_game_destroy(t_game *g)
 {
-	//mlx_destroy_window(g->mlx, g->win);
+	//free(g->img);
 	sl_map_exit(g->map, FINISH, \
 		"Game over.\n");
+	mlx_destroy_image(g->mlx, g->img);
+	mlx_destroy_window(g->mlx, g->win);
+	mlx_destroy(g->mlx);
+	free(g);
+
 	exit(0);
 }
 
@@ -37,6 +42,7 @@ void	sl_free_msg(char **map, char *error_msg)
 	ft_printf("%s", error_msg);
 	exit(EXIT_FAILURE);
 }
+
 void	sl_exit_nw(void)
 {
 	ft_printf("%s\n", "Error map contains at the start or in the middle \\n");

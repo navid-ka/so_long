@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
+/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 23:22:31 by bifrost           #+#    #+#             */
-/*   Updated: 2023/08/13 00:10:11 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/08/14 11:41:43 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void    sl_var_init(t_game *g);
 void	sl_image_init(t_game *g);
 void	sl_draw_entities(t_game *g);
 void	sl_draw_map(t_game *g);
+void	sl_draw_finish(t_game *g);
 
 //map
 

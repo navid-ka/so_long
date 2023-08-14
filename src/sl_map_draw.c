@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sl_map_draw.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
+/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 17:58:14 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/13 00:19:10 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/08/14 11:41:23 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,25 @@ void	sl_draw_entities(t_game *g)
 			}
 			if (g->map[i][j] == 'E')
 				mlx_put_image_to_window(g->mlx, g->win, g->img[3].img_ptr, \
+					j * 32, i * 32);
+			j++;
+		}
+		i++;
+	}
+}
+
+void	sl_draw_finish(t_game *g)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (g->map[i])
+	{
+		j = 0;
+		while (g->map[i][j])
+		{
+			mlx_put_image_to_window(g->mlx, g->win, g->img[0].img_ptr, \
 					j * 32, i * 32);
 			j++;
 		}
