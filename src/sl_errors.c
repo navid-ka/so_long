@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sl_errors.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
+/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 10:49:18 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/14 18:10:00 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/16 01:24:23 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,13 @@ void	sl_free(char **map)
 void	sl_free_msg(char **map, char *error_msg)
 {
 	sl_free(map);
-	ft_printf("%s", error_msg);
+	ft_printf(error_msg);
 	exit(EXIT_FAILURE);
 }
 
 void	sl_exit_nw(void)
 {
-	ft_printf("%s\n", "Error map contains \\n or empty");
+	ft_printf("Error\nMap contains \\n or empty");
 	exit(EXIT_FAILURE);
 }
 
@@ -51,7 +51,7 @@ void	sl_map_exit(char **map, int enum_msg, char *error_msg)
 {
 	if (enum_msg == NOT_BER)
 	{
-		ft_printf("Error .ber extension not found");
+		ft_printf("Error\n.ber extension not found");
 		exit(EXIT_FAILURE);
 	}
 	if (enum_msg == NOT_RECT)

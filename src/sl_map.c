@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sl_map.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
+/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 13:09:43 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/14 18:11:39 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/16 01:23:37 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,13 @@ static void	sl_map_read(int fd, t_game *g)
 static void	sl_map_parser(t_game *g)
 {
 	if (sl_map_parse_rect(g) == 0)
-		sl_map_exit(g->map, NOT_RECT, "Error map not rect\n");
+		sl_map_exit(g->map, NOT_RECT, "Error\nMap not rect\n");
 	else if (sl_map_parse_walls(g) > 0)
-		sl_map_exit(g->map, NOT_WALLS, "Error map have incorrect size/walls\n");
+		sl_map_exit(g->map, NOT_WALLS, "Error\nMap have incorrect size/walls\n");
 	else if (sl_map_parse_char(g) == 0)
-		sl_map_exit(g->map, NOT_CHARS, "Error duplicate or missing chars\n");
+		sl_map_exit(g->map, NOT_CHARS, "Error\nDuplicate or missing chars\n");
 	else if (sl_map_parse_incorrect_chars(g) == 0)
-		sl_map_exit(g->map, BAD_CHARS, "Error invalid chars\n");
+		sl_map_exit(g->map, BAD_CHARS, "Error\nInvalid chars\n");
 	sl_map_backtracking(g);
 }
 
@@ -64,7 +64,7 @@ void	sl_map_init(char **argv, t_game *g)
 	if (!(str[len - 1] == 'r' && str[len - 2] == 'e' && str[len - 3] == 'b'
 			&& str[len - 4] == '.'))
 	{
-		ft_printf("Error incorrect file extension\n");
+		ft_printf("Error\nIncorrect file extension\n");
 		exit(1);
 	}
 	fd = open(argv[1], O_RDONLY);
