@@ -17,7 +17,7 @@ LIBFT = include/libft/bin/libft.a
 MLX = include/mlx/libmlx.a
 
 #Only for MLX proyects
-OLD_MAKE = /usr/bin/make3.81 #make
+OLD_MAKE = make #/usr/bin/make3.81 #make
 
 all: 
 	@$(MAKE) -sC include/libft

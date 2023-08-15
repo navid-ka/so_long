@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   defines.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
+/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 10:13:27 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/14 18:10:51 by nkeyani-         ###   ########.fr       */
+/*   Updated: 2023/08/15 09:44:57 by bifrost          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,15 @@
 # define W 13
 # define S 1
 # define D 2
+
+//IMG DEFS
+
+# define WALL		g->img[0].img_ptr
+# define COIN		g->img[1].img_ptr
+# define PATH		g->img[2].img_ptr
+# define DOOR		g->img[3].img_ptr
+# define PLAYER_R	g->img[4].img_ptr
+# define PLAYER_L	g->img[5].img_ptr
+
 
 #endif
