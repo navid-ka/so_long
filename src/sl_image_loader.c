@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sl_image_loader.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
+/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 18:39:02 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/15 09:45:59 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/08/16 16:14:28 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,17 @@ void	sl_image_init(t_game *g)
 	g->h = 32;
 	g->w = 32;
 	g->img = malloc(sizeof(t_img) * (7 + 1));
-	WALL = mlx_xpm_file_to_image(g->mlx,
+	g->img[0].img_ptr = mlx_xpm_file_to_image(g->mlx,
 			"assets/wall.xpm", &g->w, &g->h);
-	COIN = mlx_xpm_file_to_image(g->mlx,
+	g->img[1].img_ptr = mlx_xpm_file_to_image(g->mlx,
 			"assets/coin.xpm", &g->w, &g->h);
-	PATH = mlx_xpm_file_to_image(g->mlx,
+	g->img[2].img_ptr = mlx_xpm_file_to_image(g->mlx,
 			"assets/path.xpm", &g->w, &g->h);
-	DOOR = mlx_xpm_file_to_image(g->mlx,
+	g->img[3].img_ptr = mlx_xpm_file_to_image(g->mlx,
 			"assets/door.xpm", &g->w, &g->h);
-	PLAYER_R = mlx_xpm_file_to_image(g->mlx,
+	g->img[4].img_ptr = mlx_xpm_file_to_image(g->mlx,
 			"assets/player.xpm", &g->w, &g->h);
-	PLAYER_L = mlx_xpm_file_to_image(g->mlx,
+	g->img[5].img_ptr = mlx_xpm_file_to_image(g->mlx,
 			"assets/player_left.xpm", &g->w, &g->h);
 	g->img[6].img_ptr = mlx_xpm_file_to_image(g->mlx,
 			"assets/door_open.xpm", &g->w, &g->h);
