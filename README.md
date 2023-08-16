@@ -1,3 +1,5 @@
+<iframe src="https://giphy.com/embed/orGrvsnNHzsQRw1uSW" width="480" height="256" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/orGrvsnNHzsQRw1uSW">via GIPHY</a></p>
+
 # so_long
 
 This is a project for the Core Curriculum of 42 school. The goal of this project is to create your own 2D game where you have a map that can have different dimensions and contents.
