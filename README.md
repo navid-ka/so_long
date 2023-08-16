@@ -1,4 +1,4 @@
-![so_long]([https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif](https://giphy.com/embed/orGrvsnNHzsQRw1uSW))
+![so_long]([https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmN1cGNtZmFraGN5Nzl1YzZiZWp0b213ZWQxbXRxOXpnNTdyYnMwYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/orGrvsnNHzsQRw1uSW/giphy.gif))
 
 # so_long
 
