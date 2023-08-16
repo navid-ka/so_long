@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sl_errors.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bifrost <nkeyani-@student.42barcelona.c    +#+  +:+       +#+        */
+/*   By: nkeyani- < nkeyani-@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 10:49:18 by nkeyani-          #+#    #+#             */
-/*   Updated: 2023/08/16 01:24:23 by bifrost          ###   ########.fr       */
+/*   Updated: 2023/08/16 14:16:37 by nkeyani-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	sl_game_destroy(t_game *g)
 		"Game over.\n");
 	mlx_destroy_image(g->mlx, g->img);
 	mlx_destroy_window(g->mlx, g->win);
-	//mlx_destroy(g->mlx);
+	mlx_destroy(g->mlx);
 	free(g);
 	exit(0);
 }
