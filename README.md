@@ -8,6 +8,7 @@ This is a project for the Core Curriculum of 42 school. The goal of this project
 
 - gcc compiler
 - make
+- MacOs
 - MiniLibX library
 
 ## How to run
